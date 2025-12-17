@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    // Cari user di database
+    // Find user
     const result = await query(
       'SELECT id, email, password, name, role FROM users WHERE email = $1',
       [email]
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
     const user = result[0];
 
-    // Cek password
+    // Check password
     const isValidPassword = await bcrypt.compare(password, user.password);
 
     if (!isValidPassword) {
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Buat JWT token
+    // Generate JWT
     const token = jwt.sign(
       { userId: user.id, email: user.email, role: user.role },
       process.env.JWT_SECRET!,
