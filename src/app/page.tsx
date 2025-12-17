@@ -1,33 +1,34 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h1 className="text-3xl font-bold text-blue-600 mb-4">
-            TryOut Dashboard
-          </h1>
-          <p className="text-gray-600 mb-6">
-            Aplikasi Try Out untuk Guru dan Siswa
-          </p>
-          
-          <div className="flex gap-4 mb-8">
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-              Mode Guru
-            </button>
-            <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-              Mode Siswa
-            </button>
+    <div style={{ backgroundColor: '#f3f4f6', minHeight: '100vh', padding: '2rem' }}>
+      <div style={{ backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <h1 style={{ color: '#1e40af', fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+          TryOut Dashboard
+        </h1>
+        <p style={{ color: '#6b7280', marginBottom: '2rem' }}>
+          Aplikasi Try Out untuk Guru dan Siswa
+        </p>
+        
+        <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+          <button style={{ backgroundColor: '#3b82f6', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>
+            Mode Guru
+          </button>
+          <button style={{ backgroundColor: '#10b981', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>
+            Mode Siswa
+          </button>
+        </div>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+          <div style={{ backgroundColor: '#dbeafe', borderLeft: '4px solid #3b82f6', padding: '1.5rem', borderRadius: '6px' }}>
+            <h3 style={{ color: '#1e3a8a', fontWeight: '600', marginBottom: '0.5rem' }}>Total Siswa</h3>
+            <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1e3a8a' }}>156</p>
+            <p style={{ color: '#059669', fontSize: '0.875rem' }}>+12% dari bulan lalu</p>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-blue-50 p-4 rounded border-l-4 border-l-blue-500">
-              <h3 className="font-semibold">Total Siswa</h3>
-              <p className="text-2xl font-bold">156</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded border-l-4 border-l-green-500">
-              <h3 className="font-semibold">Ujian Aktif</h3>
-              <p className="text-2xl font-bold">3</p>
-            </div>
+          <div style={{ backgroundColor: '#d1fae5', borderLeft: '4px solid #10b981', padding: '1.5rem', borderRadius: '6px' }}>
+            <h3 style={{ color: '#065f46', fontWeight: '600', marginBottom: '0.5rem' }}>Ujian Aktif</h3>
+            <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#065f46' }}>3</p>
+            <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>2 sedang berjalan</p>
           </div>
         </div>
       </div>
